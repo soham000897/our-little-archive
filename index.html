@@ -7,7 +7,7 @@
 
 <style>
 
-/* GOOGLE FONT */
+/* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
 
 /* RESET */
@@ -22,11 +22,11 @@ body{
 font-family:'Nunito',sans-serif;
 height:100vh;
 overflow:hidden;
-background:linear-gradient(180deg,#031126,#08254a,#103f7d);
+background:linear-gradient(180deg,#021120,#0a2d5e,#134d92);
 color:white;
 }
 
-/* MAIN */
+/* APP */
 #app{
 position:relative;
 width:100%;
@@ -34,15 +34,16 @@ height:100vh;
 overflow:hidden;
 }
 
-/* STARS */
-.stars{
+/* BACKGROUND STARS */
+
+.sky{
 position:absolute;
 width:100%;
 height:100%;
 top:0;
 left:0;
-pointer-events:none;
 overflow:hidden;
+pointer-events:none;
 }
 
 .star{
@@ -51,7 +52,7 @@ width:2px;
 height:2px;
 background:white;
 border-radius:50%;
-animation: twinkle 2s infinite alternate;
+animation:twinkle 2s infinite alternate;
 }
 
 @keyframes twinkle{
@@ -59,14 +60,15 @@ from{opacity:.2;}
 to{opacity:1;}
 }
 
-/* FLOATING PARTICLES */
+/* FLOAT PARTICLES */
+
 .particle{
 position:absolute;
-width:8px;
-height:8px;
+width:7px;
+height:7px;
 border-radius:50%;
-background:rgba(130,200,255,.35);
-animation: floatUp 10s linear infinite;
+background:rgba(180,220,255,.18);
+animation:floatUp 10s linear infinite;
 }
 
 @keyframes floatUp{
@@ -84,6 +86,7 @@ opacity:0;
 }
 
 /* SCENES */
+
 .scene{
 position:absolute;
 top:0;
@@ -93,9 +96,9 @@ height:100%;
 display:none;
 justify-content:center;
 align-items:center;
-padding:25px;
+padding:14px;
 opacity:0;
-transition:all .8s ease;
+transition:.8s ease;
 }
 
 .scene.active{
@@ -104,37 +107,54 @@ opacity:1;
 }
 
 /* GLASS CARD */
+
 .card{
 width:100%;
-max-width:380px;
+max-width:370px;
 background:rgba(255,255,255,.08);
-backdrop-filter:blur(14px);
-padding:18px 15px;
-border-radius:28px;
-border:1px solid rgba(255,255,255,.15);
-box-shadow:0 0 35px rgba(100,180,255,.18);
+backdrop-filter:blur(12px);
+padding:18px 14px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.12);
+box-shadow:0 0 25px rgba(100,180,255,.15);
 text-align:center;
 }
 
-/* TITLE */
+/* TEXT */
+
 h1,h2{
 line-height:1.4;
-margin-bottom:18px;
+margin-bottom:12px;
 }
 
-/* TYPE TEXT */
+.info{
+margin:7px 0;
+font-size:14px;
+color:#dff3ff;
+}
+
+.small-text{
+font-size:13px;
+line-height:1.5;
+margin-bottom:10px;
+color:#e8f6ff;
+}
+
+/* LOADING TEXT */
+
 #typing{
 font-size:15px;
+line-height:1.6;
 min-height:80px;
-line-height:1.7;
 color:#d7eeff;
 }
 
 /* PROGRESS */
+
 .progress-box{
-margin-top:25px;
+margin-top:16px;
 width:100%;
-height:8px;
+height:7px;
 background:rgba(255,255,255,.08);
 border-radius:20px;
 overflow:hidden;
@@ -142,8 +162,8 @@ overflow:hidden;
 
 .progress{
 height:100%;
-width:0%;
-background:linear-gradient(90deg,#6ebfff,#ffffff);
+width:0;
+background:linear-gradient(90deg,#69b4ff,#ffffff);
 animation:loadBar 3s linear forwards;
 }
 
@@ -154,20 +174,20 @@ width:100%;
 }
 
 /* BUTTON */
+
 button{
-margin-top:25px;
-padding:11px 24px;
+margin-top:15px;
+padding:11px 22px;
 border:none;
-border-radius:40px;
-background:linear-gradient(90deg,#4f9fff,#7fc6ff);
+border-radius:35px;
+background:linear-gradient(90deg,#5ca6ff,#89ccff);
 color:white;
-font-size:16px;
+font-size:14px;
 font-family:'Nunito';
 font-weight:700;
 cursor:pointer;
-box-shadow:0 0 25px rgba(100,180,255,.35);
 animation:pulse 2s infinite;
-transition:.3s;
+box-shadow:0 0 18px rgba(100,180,255,.25);
 }
 
 button:active{
@@ -180,14 +200,77 @@ transform:scale(.95);
 100%{transform:scale(1);}
 }
 
-/* TEXT */
-.info{
-margin:12px 0;
-font-size:18px;
-color:#dcefff;
+/* PINK PHONE */
+
+.phone-frame{
+width:220px;
+height:380px;
+margin:14px auto;
+background:linear-gradient(180deg,#ffb6d7,#ff92c4);
+border-radius:32px;
+padding:10px;
+border:2px solid rgba(255,255,255,.25);
+box-shadow:0 0 20px rgba(255,160,200,.35);
+animation:phoneAppear .6s ease;
 }
 
-/* FLASH EFFECT */
+@keyframes phoneAppear{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* PHONE DETAILS */
+
+.phone-top{
+width:70px;
+height:8px;
+background:#f4d4e2;
+margin:0 auto 8px;
+border-radius:20px;
+}
+
+.phone-bottom{
+width:60px;
+height:4px;
+background:#f4d4e2;
+margin:8px auto 0;
+border-radius:20px;
+}
+
+/* SCREENSHOT */
+
+.chat-image{
+width:100%;
+height:320px;
+object-fit:contain;
+border-radius:14px;
+background:black;
+}
+
+/* PHOTO CARD */
+
+.photo-card{
+width:220px;
+padding:8px;
+background:white;
+border-radius:12px;
+margin:10px auto;
+transform:rotate(-2deg);
+}
+
+.photo-card img{
+width:100%;
+border-radius:8px;
+}
+
+/* FLASH */
+
 .flash{
 animation:flash .5s ease;
 }
@@ -197,122 +280,7 @@ animation:flash .5s ease;
 50%{opacity:.2;}
 100%{opacity:1;}
 }
-/* MEMORY CARD */
 
-.memory-card{
-
-max-width:420px;
-
-}
-
-
-/* SMALL TEXT */
-
-.small-text{
-
-margin-bottom:20px;
-
-color:#dcefff;
-
-font-size:15px;
-}
-
-
-/* PHONE FRAME */
-
-.phone-frame{
-
-width:270px;
-
-height:340px;
-
-margin:25px auto;
-
-background:#101010;
-
-border-radius:35px;
-
-padding:12px;
-
-position:relative;
-
-box-shadow:0 0 30px rgba(100,180,255,.25);
-
-border:2px solid rgba(255,255,255,.08);
-
-animation:phoneAppear .8s ease;
-}
-
-
-/* PHONE ANIMATION */
-
-@keyframes phoneAppear{
-
-from{
-
-opacity:0;
-
-transform:translateY(25px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-/* TOP NOTCH */
-
-.phone-top{
-
-width:90px;
-
-height:10px;
-
-background:#222;
-
-margin:0 auto 10px;
-
-border-radius:20px;
-}
-
-
-/* CHAT IMAGE */
-
-.chat-image{
-
-width:100%;
-
-height:360px;
-
-object-fit:contain;
-
-border-radius:15px;
-
-background:black;
-}
-
-
-/* BOTTOM BAR */
-
-.phone-bottom{
-
-width:80px;
-
-height:5px;
-
-background:#333;
-
-margin:10px auto 0;
-
-border-radius:20px;
-}
 </style>
 </head>
 
@@ -320,21 +288,25 @@ border-radius:20px;
 
 <div id="app">
 
-<!-- STARS -->
-<div class="stars" id="stars"></div>
+<!-- BACKGROUND -->
+
+<div class="sky" id="sky"></div>
 
 
 <!-- SCENE 1 -->
+
 <section class="scene active" id="scene1">
 
 <div class="card">
 
-<h2>Memory Archive System</h2>
+<h2>Memory Archive System 💙</h2>
 
 <div id="typing"></div>
 
 <div class="progress-box">
+
 <div class="progress"></div>
+
 </div>
 
 </div>
@@ -342,40 +314,45 @@ border-radius:20px;
 </section>
 
 
+
 <!-- SCENE 2 -->
+
 <section class="scene" id="scene2">
 
 <div class="card">
 
-<h2>Identity Confirmed 💙</h2>
+<h2>Identity Confirmed 🌸</h2>
 
 <p class="info">Name : Mujgan</p>
 
-<p class="info">Alias : Mimo</p>
+<p class="info">Alias : Mimo 💙</p>
 
 <p class="info">Special Date Detected...</p>
 
 <p class="info">18 July 🎂</p>
 
-<button onclick="beginJourney()">
-
+<button onclick="goScene(3)">
 Begin Memory Journey
-
 </button>
 
 </div>
 
 </section>
-  
+
+
+
 <!-- SCENE 3 -->
+
 <section class="scene" id="scene3">
 
-<div class="card memory-card">
+<div class="card">
 
 <h2>Every story starts somewhere...</h2>
 
 <p class="small-text">
-Sometimes it starts when someone gets a special name.
+
+Sometimes special bonds begin with something small.
+
 </p>
 
 <div class="phone-frame">
@@ -388,25 +365,23 @@ Sometimes it starts when someone gets a special name.
 
 </div>
 
-<button onclick="nextScene()">
+<button onclick="goScene(4)">
 Continue
 </button>
 
 </div>
 
 </section>
-
-
-
 <!-- SCENE 4 -->
+
 <section class="scene" id="scene4">
 
-<div class="card memory-card">
+<div class="card">
 
-<h2>Some people make life lighter...</h2>
+<h2>Some people bring comfort...</h2>
 
 <p class="small-text">
-Some conversations stay longer than expected.
+Some conversations stay with us longer than expected.
 </p>
 
 <div class="phone-frame">
@@ -419,7 +394,7 @@ Some conversations stay longer than expected.
 
 </div>
 
-<button onclick="nextScene()">
+<button onclick="goScene(5)">
 Continue
 </button>
 
@@ -430,14 +405,15 @@ Continue
 
 
 <!-- SCENE 5 -->
+
 <section class="scene" id="scene5">
 
-<div class="card memory-card">
+<div class="card">
 
-<h2>Not every memory was serious...</h2>
+<h2>Not every memory was serious 😄</h2>
 
 <p class="small-text">
-Some memories were beautifully chaotic :)
+Some moments were beautifully chaotic.
 </p>
 
 <div class="phone-frame">
@@ -450,7 +426,7 @@ Some memories were beautifully chaotic :)
 
 </div>
 
-<button onclick="nextScene()">
+<button onclick="goScene(6)">
 Continue
 </button>
 
@@ -458,46 +434,318 @@ Continue
 
 </section>
 
+
+
+<!-- SCENE 6 -->
+
+<section class="scene" id="scene6">
+
+<div class="card">
+
+<h2>Some chats felt special ✨</h2>
+
+<div class="phone-frame">
+
+<div class="phone-top"></div>
+
+<img src="special1.jpg" class="chat-image">
+
+<div class="phone-bottom"></div>
+
 </div>
+
+<button onclick="goScene(7)">
+Continue
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- SCENE 7 -->
+
+<section class="scene" id="scene7">
+
+<div class="card">
+
+<h2>And some became unforgettable 💙</h2>
+
+<div class="phone-frame">
+
+<div class="phone-top"></div>
+
+<img src="special2.jpg" class="chat-image">
+
+<div class="phone-bottom"></div>
+
+</div>
+
+<button onclick="goScene(8)">
+Continue
+</button>
+
+</div>
+
+</section>
+<!-- SCENE 8 -->
+
+<section class="scene" id="scene8">
+
+<div class="card">
+
+<h2>Even future talks mattered 🌙</h2>
+
+<p class="small-text">
+Some conversations quietly stay in memory.
+</p>
+
+<div class="phone-frame">
+
+<div class="phone-top"></div>
+
+<img src="future.jpg" class="chat-image">
+
+<div class="phone-bottom"></div>
+
+</div>
+
+<button onclick="goScene(9)">
+Continue
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- SCENE 9 -->
+
+<section class="scene" id="scene9">
+
+<div class="card">
+
+<h2>Not every moment was perfect...</h2>
+
+<p class="small-text">
+Even difficult memories become part of the story.
+</p>
+
+<div class="phone-frame">
+
+<div class="phone-top"></div>
+
+<img src="fight.jpg" class="chat-image">
+
+<div class="phone-bottom"></div>
+
+</div>
+
+<button onclick="goScene(10)">
+Continue
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- SCENE 10 -->
+
+<section class="scene" id="scene10">
+
+<div class="card">
+
+<h2>Random little memories 🖼️</h2>
+
+<p class="small-text">
+Some moments needed no words.
+</p>
+
+<div class="photo-card">
+
+<img src="photo1.jpg">
+
+</div>
+
+<div class="photo-card">
+
+<img src="photo2.jpg">
+
+</div>
+
+<div class="photo-card">
+
+<img src="photo3.jpg">
+
+</div>
+
+<button onclick="goScene(11)">
+Continue
+</button>
+
+</div>
+
+</section>
+<!-- SCENE 11 -->
+
+<section class="scene" id="scene11">
+
+<div class="card">
+
+<h2>Sometimes silence says enough...</h2>
+
+<p class="small-text">
+Not every connection needs constant words.
+</p>
+
+<button onclick="goScene(12)">
+Continue
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- SCENE 12 -->
+
+<section class="scene" id="scene12">
+
+<div class="card">
+
+<h2>Today is your day 🎂</h2>
+
+<p class="small-text">
+So for once...<br><br>
+
+I wanted to give back<br><br>
+
+a small piece of everything<br><br>
+
+I never forgot 💙
+</p>
+
+<h2>Happy Birthday Mimo 🩷</h2>
+
+<button onclick="goScene(13)">
+Continue
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- SCENE 13 -->
+
+<section class="scene" id="scene13">
+
+<div class="card">
+
+<h2>One memory I never forgot...</h2>
+
+<div class="phone-frame">
+
+<div class="phone-top"></div>
+
+<img src="final.jpg" class="chat-image">
+
+<div class="phone-bottom"></div>
+
+</div>
+
+<button onclick="goScene(14)">
+Continue
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- SCENE 14 -->
+
+<section class="scene" id="scene14">
+
+<div class="card">
+
+<h2>Not everything stays forever...</h2>
+
+<p class="small-text">
+
+Life changes.<br><br>
+
+People get busy.<br><br>
+
+But some memories stay special forever 💙<br><br>
+
+Maybe someday,<br><br>
+
+beautiful memories can begin again.
+
+</p>
+
+<button onclick="restartJourney()">
+Replay Journey 🔁
+</button>
+
+</div>
+
+</section>
+
+
+
+</div>
+
 
 
 <script>
 
-/* STARS GENERATOR */
+/* SKY */
 
-let stars = document.getElementById("stars");
+let sky = document.getElementById("sky");
 
-for(let i=0;i<70;i++){
+for(let i=0;i<60;i++){
 
 let s = document.createElement("div");
+
 s.classList.add("star");
 
 s.style.left=Math.random()*100+"%";
+
 s.style.top=Math.random()*100+"%";
 
 s.style.animationDuration=(1+Math.random()*3)+"s";
 
-stars.appendChild(s);
+sky.appendChild(s);
 
 }
 
-/* PARTICLES */
-
-for(let i=0;i<15;i++){
+for(let i=0;i<12;i++){
 
 let p=document.createElement("div");
+
 p.classList.add("particle");
 
 p.style.left=Math.random()*100+"%";
-p.style.animationDuration=(8+Math.random()*6)+"s";
+
+p.style.animationDuration=(8+Math.random()*5)+"s";
 
 document.body.appendChild(p);
 
 }
 
+
 /* TYPEWRITER */
 
-const lines = [
+const lines=[
 
 "Searching archives...",
 
@@ -513,75 +761,56 @@ const lines = [
 
 let index=0;
 
-let typing = document.getElementById("typing");
+let typing=document.getElementById("typing");
 
-function showLines(){
+function typeText(){
 
 if(index<lines.length){
 
-typing.innerHTML += lines[index] + "<br>";
+typing.innerHTML+=lines[index]+"<br>";
 
 index++;
 
-setTimeout(showLines,500);
+setTimeout(typeText,500);
 
 }
 
 }
 
-showLines();
+typeText();
 
 
-/* AUTO CHANGE */
+/* AUTO TRANSITION */
 
 setTimeout(()=>{
 
-document.getElementById("scene1")
-.classList.remove("active");
-
-document.getElementById("scene2")
-.classList.add("active");
-
-document.body.classList.add("flash");
+goScene(2);
 
 },3200);
 
 
+/* SCENE CHANGE */
 
-let currentScene = 2;
+function goScene(num){
 
+let scenes=document.querySelectorAll(".scene");
 
-function beginJourney(){
+scenes.forEach(scene=>{
 
-document
-.getElementById("scene2")
-.classList.remove("active");
+scene.classList.remove("active");
 
-document
-.getElementById("scene3")
-.classList.add("active");
+});
 
-currentScene=3;
+document.getElementById("scene"+num).classList.add("active");
 
 }
 
 
-function nextScene(){
+/* REPLAY */
 
-document
-.getElementById("scene"+currentScene)
-.classList.remove("active");
+function restartJourney(){
 
-currentScene++;
-
-let next = document
-.getElementById("scene"+currentScene);
-
-if(next){
-
-next.classList.add("active");
-
-}
+location.reload();
 
 }
 
