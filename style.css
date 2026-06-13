@@ -16,7 +16,7 @@ color:white;
 position:relative;
 }
 
-/* particles */
+/* background stars */
 
 .star{
 position:absolute;
@@ -35,7 +35,7 @@ opacity:.2;
 }
 }
 
-/* card */
+/* first screen */
 
 .panel{
 width:92%;
@@ -46,9 +46,10 @@ background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.1);
 backdrop-filter:blur(14px);
 box-shadow:0 0 40px rgba(79,140,255,.15);
+transition:1s;
 }
 
-/* top */
+/* top title */
 
 .header{
 margin-bottom:20px;
@@ -57,7 +58,7 @@ color:#8ebcff;
 letter-spacing:1px;
 }
 
-/* text */
+/* typing area */
 
 #text{
 min-height:220px;
@@ -66,7 +67,7 @@ font-size:14px;
 color:#dbeaff;
 }
 
-/* blinking */
+/* cursor */
 
 .cursor{
 animation:blink .7s infinite;
@@ -96,7 +97,7 @@ background:linear-gradient(90deg,#5ca8ff,#d6e8ff);
 transition:1s;
 }
 
-/* bottom */
+/* status */
 
 .status{
 margin-top:14px;
@@ -105,13 +106,17 @@ opacity:.8;
 color:#9dbfff;
 }
 
+/* final line */
+
 .final{
 color:#7fc2ff;
 font-weight:bold;
 font-size:15px;
 text-shadow:0 0 12px rgba(127,194,255,.5);
 }
-/* identity page */
+
+
+/* second page */
 
 .identity-page{
 
@@ -128,7 +133,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-background:rgba(2,8,23,.95);
+background:rgba(2,8,23,.97);
 
 opacity:0;
 
@@ -150,9 +155,9 @@ text-align:center;
 
 background:rgba(255,255,255,.05);
 
-backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.1);
+
+backdrop-filter:blur(12px);
 
 transform:scale(.9);
 
@@ -196,7 +201,7 @@ transform:scale(1);
 
 margin-top:20px;
 
-padding:12px 22px;
+padding:12px 25px;
 
 border:none;
 
