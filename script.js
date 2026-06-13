@@ -1,23 +1,22 @@
-/* stars */
+/* Create Background Stars */
 
-for(let i=0;i<90;i++){
+for(let i=0; i<90; i++){
 
-let s=document.createElement("div");
+    let s=document.createElement("div");
 
-s.className="star";
+    s.className="star";
 
-s.style.left=Math.random()*100+"vw";
+    s.style.left=Math.random()*100+"vw";
 
-s.style.top=Math.random()*100+"vh";
+    s.style.top=Math.random()*100+"vh";
 
-s.style.animationDelay=Math.random()*4+"s";
+    s.style.animationDelay=Math.random()*4+"s";
 
-document.body.appendChild(s);
-
+    document.body.appendChild(s);
 }
 
 
-/* typing lines */
+/* Loading Text */
 
 let lines=[
 
@@ -44,65 +43,83 @@ let fill=document.getElementById("fill");
 let i=0;
 
 
+/* Typewriter Function */
+
 function write(line,done){
 
-let j=0;
+    let j=0;
 
-let div=document.createElement("div");
+    let div=document.createElement("div");
 
-box.appendChild(div);
+    box.appendChild(div);
 
-let timer=setInterval(()=>{
+    let timer=setInterval(()=>{
 
-div.innerHTML=line.substring(0,j)+"<span class='cursor'>|</span>";
+        div.innerHTML=line.substring(0,j) + "<span class='cursor'>|</span>";
 
-j++;
+        j++;
 
-if(j>line.length){
+        if(j>line.length){
 
-clearInterval(timer);
+            clearInterval(timer);
 
-if(line.includes("Hello")){
+            if(line.includes("Hello")){
 
-div.classList.add("final");
+                div.classList.add("final");
 
+            }
+
+            div.innerHTML=line;
+
+            done();
+        }
+
+    },32);
 }
 
-div.innerHTML=line;
 
-done();
-
-}
-
-},32);
-
-}
-
+/* Main Start Function */
 
 function start(){
 
-if(i<lines.length){
+    if(i < lines.length){
 
-write(lines[i],()=>{
+        write(lines[i],()=>{
 
-fill.style.width=((i+1)*14)+"%";
+            fill.style.width=((i+1)*14)+"%";
 
-i++;
+            i++;
 
-setTimeout(start,650);
+            setTimeout(start,650);
 
-});
+        });
 
-}else{
+    }
 
-setTimeout(()=>{
+    else{
 
-document
-.getElementById("identityPage")
-.classList.add("show");
+        /* After loading complete */
 
-},2000);
+        setTimeout(()=>{
+
+            /* hide first page */
+
+            document.querySelector(".panel").style.opacity="0";
+
+
+            /* show second page */
+
+            document
+            .getElementById("identityPage")
+            .classList.add("show");
+
+        },2000);
+
+    }
 
 }
 
-}
+
+/* Start */
+
+start();
