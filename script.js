@@ -93,8 +93,16 @@ setTimeout(start,650);
 
 });
 
-}
+}else{
+
+setTimeout(()=>{
+
+document
+.getElementById("identityPage")
+.classList.add("show");
+
+},2000);
 
 }
 
-start();
+}
