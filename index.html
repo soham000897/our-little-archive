@@ -197,7 +197,122 @@ animation:flash .5s ease;
 50%{opacity:.2;}
 100%{opacity:1;}
 }
+/* MEMORY CARD */
 
+.memory-card{
+
+max-width:420px;
+
+}
+
+
+/* SMALL TEXT */
+
+.small-text{
+
+margin-bottom:20px;
+
+color:#dcefff;
+
+font-size:15px;
+}
+
+
+/* PHONE FRAME */
+
+.phone-frame{
+
+width:270px;
+
+height:500px;
+
+margin:25px auto;
+
+background:#101010;
+
+border-radius:35px;
+
+padding:12px;
+
+position:relative;
+
+box-shadow:0 0 30px rgba(100,180,255,.25);
+
+border:2px solid rgba(255,255,255,.08);
+
+animation:phoneAppear .8s ease;
+}
+
+
+/* PHONE ANIMATION */
+
+@keyframes phoneAppear{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* TOP NOTCH */
+
+.phone-top{
+
+width:90px;
+
+height:10px;
+
+background:#222;
+
+margin:0 auto 10px;
+
+border-radius:20px;
+}
+
+
+/* CHAT IMAGE */
+
+.chat-image{
+
+width:100%;
+
+height:430px;
+
+object-fit:contain;
+
+border-radius:15px;
+
+background:black;
+}
+
+
+/* BOTTOM BAR */
+
+.phone-bottom{
+
+width:80px;
+
+height:5px;
+
+background:#333;
+
+margin:10px auto 0;
+
+border-radius:20px;
+}
 </style>
 </head>
 
@@ -433,9 +548,40 @@ document.body.classList.add("flash");
 
 
 
+let currentScene = 2;
+
+
 function beginJourney(){
 
-alert("PART 2 will continue next 😄💙");
+document
+.getElementById("scene2")
+.classList.remove("active");
+
+document
+.getElementById("scene3")
+.classList.add("active");
+
+currentScene=3;
+
+}
+
+
+function nextScene(){
+
+document
+.getElementById("scene"+currentScene)
+.classList.remove("active");
+
+currentScene++;
+
+let next = document
+.getElementById("scene"+currentScene);
+
+if(next){
+
+next.classList.add("active");
+
+}
 
 }
 
